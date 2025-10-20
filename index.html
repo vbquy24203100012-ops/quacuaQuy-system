@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🎁 Thiệp 20/10 Rực Rỡ Kinh Khủng 💖</title>
+<style>
+  body {
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb, #a6c1ee);
+    background-size: 400% 400%;
+    animation: gradient 5s ease infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+    font-family: 'Comic Sans MS', cursive;
+  }
+  @keyframes gradient {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+  }
+
+  .gift {
+    width: 150px;
+    height: 150px;
+    background: #ff66b2;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 0 0 40px rgba(255, 0, 150, 0.8);
+    cursor: pointer;
+    transition: transform 0.5s ease, box-shadow 0.3s;
+  }
+  .gift:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 60px rgba(255, 20, 147, 1);
+  }
+  .ribbon {
+    position: absolute;
+    background: white;
+  }
+  .ribbon.h {
+    width: 100%;
+    height: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .ribbon.v {
+    width: 15px;
+    height: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .message {
+    display: none;
+    text-align: center;
+    font-size: 22px;
+    color: #fff;
+    text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff0099, 0 0 30px #ff33cc;
+    animation: glow 1.5s infinite alternate;
+  }
+  @keyframes glow {
+    from { text-shadow: 0 0 10px #ff33cc, 0 0 20px #ff99ff; }
+    to { text-shadow: 0 0 25px #fff, 0 0 45px #ff00ff; }
+  }
+
+  .effect {
+    position: absolute;
+    font-size: 30px;
+    animation: fly linear infinite;
+  }
+  @keyframes fly {
+    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(-120vh) rotate(720deg); opacity: 0; }
+  }
+</style>
+</head>
+<body>
+<audio id="music" src="https://cdn.pixabay.com/download/audio/2023/05/13/audio_7db37d0cc7.mp3?filename=romantic-piano-14754.mp3"></audio>
+
+<div class="gift" onclick="openGift()">
+  <div class="ribbon h"></div>
+  <div class="ribbon v"></div>
+</div>
+
+<div class="message" id="msg">
+  🎉 Chúc cậu 20/10 vui vẻ nha 😜<br>
+  Luôn xinh đẹp, tươi tắn và rạng rỡ như bây giờ,<br>
+  ăn bao nhiêu cũng không mập, học ít mà điểm vẫn cao,<br>
+  ra đường lúc nào cũng có người khen xinh 🤭<br><br>
+  Mong mỗi ngày của cậu đều thật vui,<br>
+  không chỉ hôm nay mà cả những ngày sau nữa.<br>
+  Cảm ơn vì đã luôn là một người bạn dễ thương, tốt bụng<br>
+  và khiến mọi người xung quanh cảm thấy vui vẻ.<br>
+  Chúc cậu luôn hạnh phúc, gặp nhiều điều may mắn<br>
+  và được yêu thương thật nhiều nha 💕
+</div>
+
+<script>
+function openGift() {
+  document.querySelector('.gift').style.display = 'none';
+  const msg = document.getElementById('msg');
+  msg.style.display = 'block';
+  document.getElementById('music').play();
+
+  // hiệu ứng bay
+  const icons = ["🌸","💖","💫","✨","🌷","💐","🌈","💞"];
+  setInterval(() => {
+    const e = document.createElement('div');
+    e.className = 'effect';
+    e.textContent = icons[Math.floor(Math.random() * icons.length)];
+    e.style.left = Math.random() * 100 + 'vw';
+    e.style.top = '100vh';
+    e.style.animationDuration = 3 + Math.random() * 4 + 's';
+    e.style.color = `hsl(${Math.random() * 360}, 100%, 70%)`;
+    document.body.appendChild(e);
+    setTimeout(() => e.remove(), 7000);
+  }, 150);
+}
+</script>
+</body>
+</html>
