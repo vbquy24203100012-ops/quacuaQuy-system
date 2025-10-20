@@ -1,1 +1,1 @@
-# quacuaQuy-system
+# quacuaQuy-syýte
